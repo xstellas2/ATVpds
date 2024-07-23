@@ -1,5 +1,5 @@
 class Veiculo:
-    def _init_(self, marca, modelo):
+    def __init__(self, marca):
         self.marca = marca             
         self._ano = 2020               
         self.__quilometragem = 0       
@@ -12,12 +12,12 @@ class Veiculo:
 
 
 class Carro(Veiculo):
-    def _init_(self, marca, modelo, tipo_combustivel):
-        super()._init_(marca, modelo)
+    def __init__(self, marca, tipo_combustivel):
+        super().__init__(marca)
         self.tipo_combustivel = tipo_combustivel  
 
     def abastecer(self):
-        print(f"Abastecendo o carro {self.marca} {self.modelo}.")
+        print(f"Abastecendo o carro {self.marca} .")
 
     def get_ano(self):
         return self._ano  
